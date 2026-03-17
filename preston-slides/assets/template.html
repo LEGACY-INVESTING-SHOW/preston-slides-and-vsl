@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preston Pitch v12</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #111;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .slide {
+            width: 100%;
+            max-width: 1280px;
+            aspect-ratio: 16 / 9;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 60px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .slide-label {
+            text-align: center;
+            color: #d4af37;
+            font-size: 13px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+        }
+
+        /* ========================================
+           STYLE 1: GREEN HERO (APPROVED)
+           ======================================== */
+        .slide-hero {
+            background: radial-gradient(ellipse at center, #0f4c3a 0%, #0a3d2f 50%, #072820 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px;
+            text-align: center;
+        }
+
+        .slide-hero .logo {
+            background: rgba(0,0,0,0.35);
+            padding: 18px 32px;
+            border-radius: 16px;
+            margin-bottom: 45px;
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+        }
+
+        .slide-hero .logo-main {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 4px;
+        }
+
+        .slide-hero .logo-sub {
+            color: #d4af37;
+            font-size: 8px;
+            letter-spacing: 3px;
+            margin-top: 2px;
+        }
+
+        .slide-hero h1 {
+            font-size: 68px;
+            font-weight: 400;
+            color: #fff;
+            line-height: 1.1;
+        }
+
+        .slide-hero h1 .gold { color: #d4af37; }
+
+        .slide-hero .subtitle {
+            font-size: 17px;
+            color: rgba(255,255,255,0.55);
+            margin-top: 40px;
+            letter-spacing: 2px;
+        }
+
+        /* ========================================
+           STYLE 2: STATS - COMPACT, COLORFUL
+           No whitespace, punchy colors
+           ======================================== */
+        .slide-stats {
+            background: #fafafa;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .stats-left {
+            padding: 60px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .stats-left .eyebrow {
+            color: #0f4c3a;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .stats-left .eyebrow::before {
+            content: '';
+            width: 30px;
+            height: 3px;
+            background: linear-gradient(90deg, #d4af37, #0f4c3a);
+        }
+
+        .stats-left h2 {
+            font-size: 48px;
+            color: #1a1a1a;
+            line-height: 1.1;
+            margin-bottom: 18px;
+        }
+
+        .stats-left h2 .gold {
+            background: linear-gradient(120deg, #d4af37, #c4a030);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stats-left p {
+            color: #555;
+            font-size: 17px;
+            line-height: 1.65;
+            max-width: 400px;
+        }
+
+        .stats-right {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .stat-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .stat-block:nth-child(1) { background: #0f4c3a; }
+        .stat-block:nth-child(2) { background: #d4af37; }
+        .stat-block:nth-child(3) { background: #1a7a5e; }
+        .stat-block:nth-child(4) { background: #0f4c3a; }
+
+        .stat-block .big {
+            font-size: 52px;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1;
+        }
+
+        .stat-block:nth-child(2) .big {
+            color: #1a1a1a;
+        }
+
+        .stat-block .label {
+            font-size: 12px;
+            color: rgba(255,255,255,0.85);
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .stat-block:nth-child(2) .label {
+            color: rgba(0,0,0,0.7);
+        }
+
+        /* ========================================
+           STYLE 3: GREEN SECTION - FUN VERSION
+           Less boxy, more flowing
+           ======================================== */
+        .slide-section {
+            background: radial-gradient(ellipse at 25% 50%, #0f4c3a 0%, #0a3d2f 60%, #072820 100%);
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            padding: 55px 65px;
+        }
+
+        .section-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .section-left .eyebrow {
+            color: #d4af37;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-left .eyebrow::before {
+            content: '';
+            width: 40px;
+            height: 2px;
+            background: #d4af37;
+        }
+
+        .section-left h2 {
+            font-size: 52px;
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .section-left p {
+            color: rgba(255,255,255,0.7);
+            font-size: 17px;
+            line-height: 1.65;
+            max-width: 420px;
+        }
+
+        .section-right {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Fun staggered cards instead of boring list */
+        .card-stack {
+            position: relative;
+            width: 380px;
+            height: 340px;
+        }
+
+        .floating-card {
+            position: absolute;
+            background: rgba(255,255,255,0.95);
+            border-radius: 12px;
+            padding: 18px 22px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .floating-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+        }
+
+        .floating-card:nth-child(1) { top: 0; left: 0; z-index: 4; }
+        .floating-card:nth-child(2) { top: 70px; left: 40px; z-index: 3; }
+        .floating-card:nth-child(3) { top: 140px; left: 10px; z-index: 2; }
+        .floating-card:nth-child(4) { top: 210px; left: 50px; z-index: 1; }
+
+        .floating-card .num {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #0f4c3a, #1a7a5e);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 700;
+            font-size: 15px;
+            flex-shrink: 0;
+        }
+
+        .floating-card .text {
+            color: #1a1a1a;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        /* ========================================
+           STYLE 4: LIGHT - HORIZONTAL FLOW
+           Not boxes, more magazine style
+           ======================================== */
+        .slide-flow {
+            background: #fafafa;
+            padding: 55px 65px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .flow-header {
+            margin-bottom: 40px;
+        }
+
+        .flow-header .eyebrow {
+            color: #0f4c3a;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .flow-header .eyebrow::before {
+            content: '';
+            width: 28px;
+            height: 3px;
+            background: linear-gradient(90deg, #d4af37, #0f4c3a);
+        }
+
+        .flow-header h2 {
+            font-size: 46px;
+            color: #1a1a1a;
+            line-height: 1.1;
+        }
+
+        .flow-header h2 .green { color: #0f4c3a; }
+
+        .flow-items {
+            display: flex;
+            gap: 25px;
+            align-items: flex-start;
+        }
+
+        .flow-item {
+            flex: 1;
+            background: linear-gradient(180deg, #0f4c3a 0%, #0a3d2f 100%);
+            border-radius: 16px;
+            padding: 35px 30px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .flow-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+        }
+
+        .flow-item .num {
+            font-size: 48px;
+            font-weight: 800;
+            color: #d4af37;
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+
+        .flow-item h4 {
+            font-size: 20px;
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 12px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .flow-item p {
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+            line-height: 1.55;
+        }
+
+        /* ========================================
+           STYLE 5: NUMBERS - FULL COLOR BLOCKS
+           No whitespace, bold colors
+           ======================================== */
+        .slide-numbers {
+            display: grid;
+            grid-template-columns: 0.8fr 1fr 1fr 1fr;
+        }
+
+        .numbers-intro {
+            background: #fafafa;
+            padding: 40px 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .numbers-intro .eyebrow {
+            color: #0f4c3a;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .numbers-intro .eyebrow::before {
+            content: '';
+            width: 20px;
+            height: 2px;
+            background: #d4af37;
+        }
+
+        .numbers-intro h2 {
+            font-size: 36px;
+            color: #1a1a1a;
+            line-height: 1.15;
+        }
+
+        .num-block {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px 35px;
+        }
+
+        .num-block:nth-child(2) { background: #0f4c3a; }
+        .num-block:nth-child(3) { background: #d4af37; }
+        .num-block:nth-child(4) { background: #1a7a5e; }
+
+        .num-block .big {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+
+        .num-block:nth-child(2) .big,
+        .num-block:nth-child(4) .big { color: #fff; }
+        .num-block:nth-child(3) .big { color: #1a1a1a; }
+
+        .num-block h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .num-block:nth-child(2) h4,
+        .num-block:nth-child(4) h4 { color: #fff; }
+        .num-block:nth-child(3) h4 { color: #1a1a1a; }
+
+        .num-block p {
+            font-size: 13px;
+            line-height: 1.45;
+        }
+
+        .num-block:nth-child(2) p,
+        .num-block:nth-child(4) p { color: rgba(255,255,255,0.75); }
+        .num-block:nth-child(3) p { color: rgba(0,0,0,0.6); }
+
+        /* ========================================
+           STYLE 6: COMPARISON - MORE FUN
+           ======================================== */
+        .slide-compare {
+            background: #fafafa;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .compare-bad {
+            background: linear-gradient(135deg, #c53030 0%, #9b2c2c 100%);
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .compare-good {
+            background: linear-gradient(135deg, #0f4c3a 0%, #0a3d2f 100%);
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .compare-bad .tag,
+        .compare-good .tag {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            width: fit-content;
+        }
+
+        .compare-bad .tag { background: rgba(0,0,0,0.2); color: #fff; }
+        .compare-good .tag { background: #d4af37; color: #1a1a1a; }
+
+        .compare-bad h3,
+        .compare-good h3 {
+            font-size: 36px;
+            color: #fff;
+            margin-bottom: 25px;
+        }
+
+        .compare-list {
+            list-style: none;
+        }
+
+        .compare-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 14px;
+            font-size: 15px;
+            line-height: 1.45;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .compare-list li:last-child { margin-bottom: 0; }
+
+        .compare-list .ico {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 12px;
+            margin-top: 2px;
+        }
+
+        .compare-bad .ico { background: rgba(255,255,255,0.2); color: #fff; }
+        .compare-good .ico { background: #d4af37; color: #1a1a1a; }
+
+        /* ========================================
+           STYLE 7: CONTEXTUAL (Airbnb - APPROVED)
+           ======================================== */
+        .slide-context {
+            background: #fafafa;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .context-left {
+            padding: 55px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .context-left .eyebrow {
+            color: #0f4c3a;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .context-left .eyebrow::before {
+            content: '';
+            width: 26px;
+            height: 3px;
+            background: linear-gradient(90deg, #d4af37, #0f4c3a);
+        }
+
+        .context-left h2 {
+            font-size: 40px;
+            color: #1a1a1a;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        .context-left p {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.6;
+            max-width: 380px;
+        }
+
+        .context-right {
+            background: linear-gradient(135deg, #FF5A5F 0%, #FF385C 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 45px;
+        }
+
+        .airbnb-logo {
+            font-size: 40px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .airbnb-tag {
+            color: rgba(255,255,255,0.9);
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .listing-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 18px;
+            width: 260px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .listing-top {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .listing-img {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #e0e0e0, #c0c0c0);
+            border-radius: 8px;
+        }
+
+        .listing-info .name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .listing-info .rating {
+            font-size: 12px;
+            color: #FF385C;
+            margin-top: 2px;
+        }
+
+        .listing-stats {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 14px;
+            border-top: 1px solid #eee;
+        }
+
+        .listing-stat {
+            text-align: center;
+        }
+
+        .listing-stat .val {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0f4c3a;
+        }
+
+        .listing-stat .lbl {
+            font-size: 9px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+        }
+
+        /* ========================================
+           STYLE 8: BROKERAGE CONTEXTUAL
+           Charles Schwab example
+           ======================================== */
+        .slide-brokerage {
+            background: #fafafa;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .brokerage-left {
+            padding: 55px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .brokerage-left .eyebrow {
+            color: #0f4c3a;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brokerage-left .eyebrow::before {
+            content: '';
+            width: 26px;
+            height: 3px;
+            background: linear-gradient(90deg, #d4af37, #0f4c3a);
+        }
+
+        .brokerage-left h2 {
+            font-size: 40px;
+            color: #1a1a1a;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        .brokerage-left p {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.6;
+            max-width: 380px;
+        }
+
+        .brokerage-right {
+            background: linear-gradient(135deg, #00a0df 0%, #0077b5 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 45px;
+        }
+
+        .schwab-logo {
+            font-size: 32px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+        }
+
+        .schwab-sub {
+            font-size: 11px;
+            color: rgba(255,255,255,0.8);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .account-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 22px;
+            width: 280px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .account-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .account-header .type {
+            font-size: 11px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .account-header .status {
+            font-size: 10px;
+            color: #0f4c3a;
+            background: rgba(15, 76, 58, 0.1);
+            padding: 4px 10px;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        .account-balance .label {
+            font-size: 11px;
+            color: #888;
+            margin-bottom: 4px;
+        }
+
+        .account-balance .amount {
+            font-size: 32px;
+            font-weight: 700;
+            color: #0f4c3a;
+        }
+
+        .account-balance .change {
+            font-size: 13px;
+            color: #1a7a5e;
+            margin-top: 4px;
+        }
+
+        /* Info */
+        .info {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 25px 30px;
+            background: rgba(212, 175, 55, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .info p {
+            color: #999;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .info strong { color: #d4af37; }
+    </style>
+</head>
+<body>
+
+    <!-- 1: GREEN HERO -->
+    <p class="slide-label">Style 1 → Title</p>
+    <div class="slide slide-hero">
+        <div class="logo">
+            <div class="logo-main">THE LEGACY</div>
+            <div class="logo-sub">INVESTING SHOW</div>
+        </div>
+        <h1>The Complete <span class="gold">Wealth</span><br>Acceleration System</h1>
+        <p class="subtitle">Presented by Preston Seo</p>
+    </div>
+
+    <!-- 2: STATS - COLORFUL BLOCKS -->
+    <p class="slide-label">Style 2 → Stats (No Whitespace)</p>
+    <div class="slide slide-stats">
+        <div class="stats-left">
+            <div class="eyebrow">The Problem</div>
+            <h2>Earning More. <span class="gold">Keeping Less.</span></h2>
+            <p>High income should mean high wealth. But the system is designed to take your money before you can build with it.</p>
+        </div>
+        <div class="stats-right">
+            <div class="stat-block">
+                <div class="big">42%</div>
+                <div class="label">Tax Rate</div>
+            </div>
+            <div class="stat-block">
+                <div class="big">$87K</div>
+                <div class="label">Lost Yearly</div>
+            </div>
+            <div class="stat-block">
+                <div class="big">10+</div>
+                <div class="label">Years Wasted</div>
+            </div>
+            <div class="stat-block">
+                <div class="big">$0</div>
+                <div class="label">Tax Strategy</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3: GREEN SECTION - FLOATING CARDS -->
+    <p class="slide-label">Style 3 → Section Intro (Fun Cards)</p>
+    <div class="slide slide-section">
+        <div class="section-left">
+            <div class="eyebrow">Gap 1 of 4</div>
+            <h2>The Education Gap</h2>
+            <p>You know you need to optimize. But nobody taught you the specific playbook that works for high-income earners.</p>
+        </div>
+        <div class="section-right">
+            <div class="card-stack">
+                <div class="floating-card">
+                    <div class="num">1</div>
+                    <span class="text">Tax Strategy Mastery</span>
+                </div>
+                <div class="floating-card">
+                    <div class="num">2</div>
+                    <span class="text">Wealth Building Framework</span>
+                </div>
+                <div class="floating-card">
+                    <div class="num">3</div>
+                    <span class="text">Asset Protection Blueprint</span>
+                </div>
+                <div class="floating-card">
+                    <div class="num">4</div>
+                    <span class="text">Legacy Planning System</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4: HORIZONTAL FLOW -->
+    <p class="slide-label">Style 4 → Horizontal Cards</p>
+    <div class="slide slide-flow">
+        <div class="flow-header">
+            <div class="eyebrow">The Solution</div>
+            <h2>Stack Your <span class="green">Wealth</span> Systematically</h2>
+        </div>
+        <div class="flow-items">
+            <div class="flow-item">
+                <div class="num">01</div>
+                <h4>Tax-Optimized Growth</h4>
+                <p>Legal strategies that keep more money in your pocket every single year.</p>
+            </div>
+            <div class="flow-item">
+                <div class="num">02</div>
+                <h4>Asset Protection</h4>
+                <p>Shield your wealth from lawsuits, creditors, and unnecessary exposure.</p>
+            </div>
+            <div class="flow-item">
+                <div class="num">03</div>
+                <h4>Multiple Streams</h4>
+                <p>Diversify income so you're never dependent on a single source.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5: NUMBERS - FULL BLOCKS -->
+    <p class="slide-label">Style 5 → Numbers (Full Color)</p>
+    <div class="slide slide-numbers">
+        <div class="numbers-intro">
+            <div class="eyebrow">Results</div>
+            <h2>What Our Members Achieve</h2>
+        </div>
+        <div class="num-block">
+            <div class="big">$127K</div>
+            <h4>Tax Savings</h4>
+            <p>Average first year results for $400K+ earners</p>
+        </div>
+        <div class="num-block">
+            <div class="big">3.2x</div>
+            <h4>Wealth Growth</h4>
+            <p>Portfolio multiplier over 5 years</p>
+        </div>
+        <div class="num-block">
+            <div class="big">89%</div>
+            <h4>Goal Hit</h4>
+            <p>Members reach 10-year target early</p>
+        </div>
+    </div>
+
+    <!-- 6: COMPARISON - BOLD COLORS -->
+    <p class="slide-label">Style 6 → Before/After (Bold)</p>
+    <div class="slide slide-compare">
+        <div class="compare-bad">
+            <div class="tag">Without Us</div>
+            <h3>The Old Way</h3>
+            <ul class="compare-list">
+                <li><span class="ico">✕</span> Paying 40%+ in taxes every year</li>
+                <li><span class="ico">✕</span> Generic advice from YouTube</li>
+                <li><span class="ico">✕</span> No clear roadmap or priorities</li>
+                <li><span class="ico">✕</span> Leaving $50K-200K on the table</li>
+                <li><span class="ico">✕</span> Working harder, not smarter</li>
+            </ul>
+        </div>
+        <div class="compare-good">
+            <div class="tag">With Legacy</div>
+            <h3>The New Reality</h3>
+            <ul class="compare-list">
+                <li><span class="ico">✓</span> Legally reduce taxes to 15-25%</li>
+                <li><span class="ico">✓</span> Personalized strategy for YOU</li>
+                <li><span class="ico">✓</span> Clear action plan with priorities</li>
+                <li><span class="ico">✓</span> Keep an extra $50K-200K yearly</li>
+                <li><span class="ico">✓</span> Wealth compounds automatically</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 7: AIRBNB CONTEXTUAL -->
+    <p class="slide-label">Style 7 → Contextual (Airbnb)</p>
+    <div class="slide slide-context">
+        <div class="context-left">
+            <div class="eyebrow">Strategy: STR Loophole</div>
+            <h2>Turn Your Property Into a Tax-Free Cash Machine</h2>
+            <p>The Short-Term Rental loophole lets you generate passive income while legally reducing your tax burden to near zero.</p>
+        </div>
+        <div class="context-right">
+            <div class="airbnb-logo">airbnb</div>
+            <div class="airbnb-tag">Your property. Your tax savings.</div>
+            <div class="listing-card">
+                <div class="listing-top">
+                    <div class="listing-img"></div>
+                    <div class="listing-info">
+                        <div class="name">Your Listing</div>
+                        <div class="rating">★★★★★ Superhost</div>
+                    </div>
+                </div>
+                <div class="listing-stats">
+                    <div class="listing-stat">
+                        <div class="val">$4.2K</div>
+                        <div class="lbl">Monthly</div>
+                    </div>
+                    <div class="listing-stat">
+                        <div class="val">92%</div>
+                        <div class="lbl">Occupancy</div>
+                    </div>
+                    <div class="listing-stat">
+                        <div class="val">$0</div>
+                        <div class="lbl">Tax Due</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 8: SCHWAB CONTEXTUAL -->
+    <p class="slide-label">Style 8 → Contextual (Brokerage)</p>
+    <div class="slide slide-brokerage">
+        <div class="brokerage-left">
+            <div class="eyebrow">Action Step</div>
+            <h2>Open Your Tax-Advantaged Brokerage Account</h2>
+            <p>Set up the foundation for your wealth-building strategy with a proper brokerage account optimized for tax efficiency.</p>
+        </div>
+        <div class="brokerage-right">
+            <div class="schwab-logo">Charles Schwab</div>
+            <div class="schwab-sub">Wealth Management</div>
+            <div class="account-card">
+                <div class="account-header">
+                    <div class="type">Individual Brokerage</div>
+                    <div class="status">● Active</div>
+                </div>
+                <div class="account-balance">
+                    <div class="label">Total Balance</div>
+                    <div class="amount">$247,850</div>
+                    <div class="change">↑ +12.4% YTD</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="info">
+        <p><strong>8 Styles</strong> — More fun, less boring. Colorful blocks instead of whitespace. Contextual visuals when content demands it. Floating cards instead of stacked boxes.</p>
+    </div>
+
+</body>
+</html>
