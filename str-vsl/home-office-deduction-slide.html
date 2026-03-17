@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legacy Investing - Home Office Deduction Slide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-green: #0f4c3a;
+            --dark-green-mid: #0a3d2f;
+            --dark-green-deep: #072820;
+            --light-green: #1a7a5e;
+            --gold: #d4af37;
+            --gold-dark: #b8962e;
+            --off-white: #fafafa;
+            --near-black: #1a1a1a;
+            --red: #c53030;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #111;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .slide-label {
+            text-align: center;
+            color: var(--gold);
+            font-size: 13px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+        }
+
+        .slide {
+            width: 100%;
+            max-width: 1280px;
+            aspect-ratio: 16 / 9;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .slide-home-office {
+            background: radial-gradient(ellipse at 32% 18%, var(--dark-green) 0%, var(--dark-green-mid) 52%, var(--dark-green-deep) 100%);
+            display: flex;
+            flex-direction: column;
+            padding: 40px 50px 34px;
+            position: relative;
+        }
+
+        .slide-home-office::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 84% 12%, rgba(212, 175, 55, 0.14) 0%, transparent 22%),
+                radial-gradient(circle at 6% 92%, rgba(255, 255, 255, 0.04) 0%, transparent 18%);
+            pointer-events: none;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-badge {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--near-black);
+            font-size: 16px;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            color: #fff;
+            font-weight: 500;
+            line-height: 1.08;
+        }
+
+        .header h1 .gold {
+            color: var(--gold);
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 16px;
+            line-height: 1.45;
+            margin-bottom: 22px;
+            margin-left: 58px;
+            max-width: 940px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle .highlight {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .steps-flow {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 14px;
+            margin-bottom: 22px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-card {
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: 14px;
+            padding: 20px 18px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            min-height: 238px;
+        }
+
+        .step-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 82px;
+            height: 82px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.13) 0%, transparent 70%);
+        }
+
+        .step-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.22);
+        }
+
+        .step-card .num {
+            font-size: 34px;
+            font-weight: 800;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 9px;
+        }
+
+        .step-card h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 17px;
+            color: var(--dark-green);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .step-card p {
+            font-size: 13px;
+            color: #535353;
+            line-height: 1.48;
+        }
+
+        .step-card .micro {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: rgba(15, 76, 58, 0.08);
+            color: var(--dark-green);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+
+        .bottom-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 22px;
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .proof-panel,
+        .payoff-card {
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: 18px;
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.22);
+            overflow: hidden;
+        }
+
+        .proof-panel {
+            padding: 24px 28px;
+        }
+
+        .panel-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .panel-line {
+            width: 42px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        .panel-header h2 {
+            font-size: 24px;
+            color: var(--dark-green);
+            font-weight: 500;
+        }
+
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .proof-chip {
+            background: linear-gradient(180deg, rgba(15, 76, 58, 0.08) 0%, rgba(15, 76, 58, 0.03) 100%);
+            border: 1px solid rgba(15, 76, 58, 0.08);
+            border-radius: 14px;
+            padding: 14px 14px 12px;
+        }
+
+        .proof-chip .label {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--gold-dark);
+            letter-spacing: 1.6px;
+            text-transform: uppercase;
+            margin-bottom: 7px;
+        }
+
+        .proof-chip .value {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--dark-green);
+            line-height: 1.15;
+            margin-bottom: 4px;
+        }
+
+        .proof-chip p {
+            font-size: 12px;
+            line-height: 1.45;
+            color: #666;
+        }
+
+        .proof-note {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, var(--dark-green), var(--light-green));
+            border-radius: 14px;
+            padding: 14px 16px;
+            color: #fff;
+        }
+
+        .proof-note .icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.16);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .proof-note p {
+            font-size: 14px;
+            line-height: 1.42;
+        }
+
+        .proof-note p strong {
+            color: #fff;
+        }
+
+        .payoff-card {
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 245, 236, 0.98) 100%);
+        }
+
+        .payoff-top {
+            padding: 26px 28px 18px;
+            border-bottom: 1px solid rgba(15, 76, 58, 0.08);
+        }
+
+        .payoff-top .eyebrow {
+            color: var(--dark-green);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2.4px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .payoff-top h2 {
+            font-size: 34px;
+            color: var(--dark-green);
+            line-height: 1.05;
+            margin-bottom: 10px;
+        }
+
+        .payoff-top h2 .gold {
+            color: var(--gold);
+        }
+
+        .payoff-top p {
+            font-size: 14px;
+            color: #5f5f5f;
+            line-height: 1.5;
+        }
+
+        .payoff-metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1px;
+            background: rgba(15, 76, 58, 0.08);
+        }
+
+        .metric {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 16px 12px 18px;
+            text-align: center;
+        }
+
+        .metric .big {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--dark-green);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .metric .big.gold {
+            color: var(--gold-dark);
+        }
+
+        .metric .label {
+            font-size: 11px;
+            color: #6a6a6a;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+        }
+
+        .payoff-bottom {
+            padding: 18px 28px 22px;
+        }
+
+        .payoff-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .payoff-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: #454545;
+            font-size: 13px;
+            line-height: 1.45;
+        }
+
+        .payoff-list li .dot {
+            width: 22px;
+            height: 22px;
+            border-radius: 7px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--near-black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 800;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+    </style>
+</head>
+<body>
+    <p class="slide-label">Preston Slides → Home Office Deduction Process</p>
+
+    <div class="slide slide-home-office">
+        <div class="header">
+            <div class="header-badge">T</div>
+            <h1>How To Claim The <span class="gold">Home Office Deduction</span></h1>
+        </div>
+
+        <p class="subtitle">Five steps to document business use, protect the write-off, and hand your CPA everything needed for <span class="highlight">Form 8829</span>.</p>
+
+        <div class="steps-flow">
+            <div class="step-card">
+                <div class="num">01</div>
+                <h3>Pick Your Space</h3>
+                <p>Use a spare bedroom, office corner, or converted garage. Measure that workspace, then divide it by your total home square footage.</p>
+                <div class="micro">Most people land at 10% to 20%</div>
+            </div>
+
+            <div class="step-card">
+                <div class="num">02</div>
+                <h3>Take Photos</h3>
+                <p>Capture before-and-after proof that the space is set up for business: desk, computer, whiteboard, filing cabinet, and the rest of your work setup.</p>
+                <div class="micro">Shows regular + exclusive use</div>
+            </div>
+
+            <div class="step-card">
+                <div class="num">03</div>
+                <h3>Keep A Simple Log</h3>
+                <p>You do not need to track every hour. Just keep a lightweight record of which days you worked there and what you were doing.</p>
+                <div class="micro">Protection if questioned later</div>
+            </div>
+
+            <div class="step-card">
+                <div class="num">04</div>
+                <h3>Track Real Expenses</h3>
+                <p>Keep mortgage interest or rent, utilities, internet, property taxes, homeowners insurance, and repairs in one folder or spreadsheet.</p>
+                <div class="micro">These are the CPA inputs</div>
+            </div>
+
+            <div class="step-card">
+                <div class="num">05</div>
+                <h3>File Form 8829</h3>
+                <p>Your CPA handles the filing, but now you know the form, the documentation behind it, and exactly what numbers go into the deduction.</p>
+                <div class="micro">Business Use of Your Home</div>
+            </div>
+        </div>
+
+        <div class="bottom-grid">
+            <div class="proof-panel">
+                <div class="panel-header">
+                    <div class="panel-line"></div>
+                    <h2>What Makes The Deduction Defensible</h2>
+                </div>
+
+                <div class="proof-grid">
+                    <div class="proof-chip">
+                        <div class="label">Measurement</div>
+                        <div class="value">Business Use %</div>
+                        <p>Workspace square footage divided by total home square footage.</p>
+                    </div>
+                    <div class="proof-chip">
+                        <div class="label">Documentation</div>
+                        <div class="value">Photos + Log</div>
+                        <p>Visual proof and a simple work record make the story easy to support.</p>
+                    </div>
+                    <div class="proof-chip">
+                        <div class="label">Numbers</div>
+                        <div class="value">Actual Expenses</div>
+                        <p>Rent, utilities, taxes, insurance, internet, and repairs all in one place.</p>
+                    </div>
+                </div>
+
+                <div class="proof-note">
+                    <div class="icon">+</div>
+                    <p><strong>The IRS standard is regular and exclusive use.</strong> This slide gives them the square footage, proof package, and expense trail to back it up.</p>
+                </div>
+            </div>
+
+            <div class="payoff-card">
+                <div class="payoff-top">
+                    <div class="eyebrow">This Week Action Plan</div>
+                    <h2><span class="gold">30 Minutes</span> Can Save You <span class="gold">Thousands</span></h2>
+                    <p>You can finish steps 1 through 3 this week, then hand the rest to your CPA when tax time comes around.</p>
+                </div>
+
+                <div class="payoff-metrics">
+                    <div class="metric">
+                        <div class="big">1-3</div>
+                        <div class="label">Steps To Do Now</div>
+                    </div>
+                    <div class="metric">
+                        <div class="big gold">30</div>
+                        <div class="label">Minutes This Week</div>
+                    </div>
+                    <div class="metric">
+                        <div class="big">8829</div>
+                        <div class="label">CPA Filing Form</div>
+                    </div>
+                </div>
+
+                <div class="payoff-bottom">
+                    <ul class="payoff-list">
+                        <li><span class="dot">1</span><span>Pick the space and calculate the business-use percentage.</span></li>
+                        <li><span class="dot">2</span><span>Take the before-and-after photos that prove the setup is for business.</span></li>
+                        <li><span class="dot">3</span><span>Start a simple log so the deduction is supported before you ever need it.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
