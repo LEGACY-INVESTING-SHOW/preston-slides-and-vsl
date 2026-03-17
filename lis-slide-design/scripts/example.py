@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Example helper script for preston-slides
+Example helper script for lis-slide-design
 
 This is a placeholder script that can be executed directly.
 Replace with actual implementation or delete if not needed.
@@ -11,7 +11,7 @@ Example real scripts from other skills:
 """
 
 def main():
-    print("This is an example script for preston-slides")
+    print("This is an example script for lis-slide-design")
     # TODO: Add actual script logic here
     # This could be data processing, file conversion, API calls, etc.
 

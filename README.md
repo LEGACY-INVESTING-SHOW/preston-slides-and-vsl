@@ -1,10 +1,10 @@
-# Preston Slides and VSL Archive
+# LIS SLIDE DESIGN and VSL Archive
 
 This repo bundles the requested files into one shareable GitHub repository.
 
 ## Included Content
 
-- `preston-slides/` copied from `Archive/Preston Content Archive/style-guide-slides-jan28/preston-slides`
+- `lis-slide-design/` copied from `Archive/Preston Content Archive/style-guide-slides-jan28/preston-slides`, then renamed and expanded into the LIS SLIDE DESIGN skill
 - `str-vsl/overall.html` copied from `PreCall VSL/STR/experimental/str vsl/overall.html`
 - `str-vsl/images/` added so `overall.html` can render its image assets
 
