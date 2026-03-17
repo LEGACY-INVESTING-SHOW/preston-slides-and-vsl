@@ -113,33 +113,55 @@ CRITICAL: intentionality matters more than intensity. A quiet, refined slide can
 - Use hierarchy aggressively: eyebrow, headline, support copy, labels, and proof should feel distinct.
 - Compress long ideas into punchy lines, not presenter-paragraphs on the slide.
 - Let the headline carry the narrative burden whenever possible.
+- Use a deliberate type scale when adding new CSS. `clamp()` is preferred for sizing that needs to adapt across browser and presenter contexts.
+- Preserve the existing Playfair/Inter pairing unless the user explicitly wants a different visual system.
 - Avoid generic "icon above heading plus short paragraph" composition unless the existing slide pattern truly calls for it.
+- Avoid monospace as a lazy shortcut for "technical" or "financial" slides.
 
 ### Color
 
 - Commit to dominant surfaces with decisive accents rather than distributing all colors evenly.
 - Use gold as emphasis, not wallpaper.
+- Tint neutrals toward the brand family instead of relying on lifeless default gray.
 - On colored surfaces, use text colors tuned to the surface instead of washed-out generic gray.
+- Avoid pure black `#000` and pure white `#fff` when adding new surfaces; slightly tinted values feel more designed and sit better with the existing palette.
 - Avoid generic AI palettes such as purple-blue gradients, cyan-on-dark, or decorative neon accents that do not belong to the LIS brand.
+- Avoid defaulting to dark mode plus glow effects as a substitute for actual art direction.
 
 ### Layout And Rhythm
 
 - Create rhythm by varying density across the deck: some slides should breathe, some should stack proof tightly.
+- Use varied spacing intentionally. Tight groupings and generous separations should both exist in the same deck when the narrative benefits.
+- Use `clamp()` for spacing when adding new CSS so layouts scale more gracefully.
 - Prefer asymmetric, directional layouts when they improve scanability or drama.
 - Left-aligned text usually feels more deliberate than centering every element.
 - Break uniformity on purpose. Repeating the exact same card grid too many times makes the deck feel templated.
+- Not everything needs a card.
+- Avoid cards inside cards unless the nested hierarchy is essential to comprehension.
 
 ### Visual Details
 
 - Decorative elements should reinforce the argument, not just fill empty space.
 - Screenshots, dashboards, tables, and mockups should be chosen because they prove something.
 - Use borders, highlights, tags, and contrast to clarify meaning, not to add decoration for its own sake.
+- Avoid glassmorphism, decorative blur, or glow-heavy framing unless it serves a specific argument.
+- Avoid generic rounded rectangles with safe drop shadows if they do not create meaningful hierarchy.
 
 ### Motion And Reveal
 
 - If adding animation or reveal logic, use it to clarify sequence or emphasis.
 - Favor a few meaningful reveal moments over constant motion everywhere.
+- Prefer smooth deceleration over gimmicky bounce or elastic motion.
+- When implementing animations, favor `transform` and `opacity` over animating layout properties like `width`, `height`, `padding`, or `margin`.
 - Avoid flashy transitions that compete with the message.
+
+### Interaction And Responsiveness
+
+- If the deck includes interactive controls, disclosures, or demos, make them feel immediate and intentional.
+- Use progressive disclosure when a slide has advanced details: show the core story first, then reveal depth.
+- Do not make every action feel primary; hierarchy matters in controls just like it does in content.
+- Adapt layouts for smaller browser contexts rather than simply hiding important content.
+- Keep critical narrative content visible even when the deck is viewed outside ideal presentation dimensions.
 
 ### Slide Writing
 
@@ -155,11 +177,15 @@ Avoid these common failure modes:
 - card soup: too many same-sized cards with equal emphasis
 - centered-everything layouts that remove narrative direction
 - giant generic icons used as decorative filler
+- icon-above-heading card grids repeated across the deck
 - gradient text on metrics or headings
 - purple/cyan "AI" palettes that break the brand
+- pure black/pure white surfaces that clash with the rest of the deck
 - repeating the same slide pattern so often the deck loses momentum
+- identical card grids with the same padding, same shadows, and same information weight
 - stuffing presenter notes onto the visible slide
 - adding charts, badges, or screenshots that do not advance the argument
+- wrapping every section in a card because the layout feels empty
 - making every button, stat, or callout feel equally important
 - trying to squeeze an entire script beat into one overloaded slide
 

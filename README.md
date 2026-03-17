@@ -9,13 +9,13 @@ The installable skill is the root [`SKILL.md`](SKILL.md). The bundled reference 
 Install directly from the GitHub repo:
 
 ```bash
-npx skills add LEGACY-INVESTING-SHOW/preston-slides-and-vsl
+npx skills add LEGACY-INVESTING-SHOW/lis-slide-design
 ```
 
 You can also install from the full GitHub URL:
 
 ```bash
-npx skills add https://github.com/LEGACY-INVESTING-SHOW/preston-slides-and-vsl
+npx skills add https://github.com/LEGACY-INVESTING-SHOW/lis-slide-design
 ```
 
 If your agent does not pick up the new skill immediately, restart it.
@@ -67,4 +67,5 @@ That means the repo URL is enough. A user does not need to point at a nested sub
 - This repo is intentionally packaged as a single-skill repository.
 - `str-vsl/overall.html` is the main reference artifact the skill uses to choose layouts.
 - `assets/template.html` is kept only as a secondary helper for generic deck starts.
-- The install identifier remains `lis-slide-design` for compatibility with the skills ecosystem, while the human-facing skill title is `LIS SLIDE DESIGN`.
+- The public skill title is `LIS SLIDE DESIGN`.
+- The install identifier stays `lis-slide-design` for compatibility with the skills ecosystem and `skills` CLI naming rules.
