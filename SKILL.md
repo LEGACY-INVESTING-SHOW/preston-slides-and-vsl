@@ -1,17 +1,17 @@
 ---
 name: lis-slide-design
-description: LIS SLIDE DESIGN creates HTML presentation slides for Legacy Investing Show in Preston Seo's brand style. Use when creating slide decks, presentations, pitch decks, or HTML-based slides for Legacy Investing, Preston Seo, tax optimization content, or wealth-building presentations. In this repo, use `../str-vsl/overall.html` as the primary reference and working deck.
+description: LIS SLIDE DESIGN creates HTML presentation slides for Legacy Investing Show in Preston Seo's brand style. Use when creating slide decks, presentations, pitch decks, or HTML-based slides for Legacy Investing, Preston Seo, tax optimization content, or wealth-building presentations. In this repo, use `str-vsl/overall.html` as the primary reference and working deck.
 ---
 
 # LIS SLIDE DESIGN
 
 Create professional HTML presentation slides following the Legacy Investing Show brand guidelines.
 
-In this repository, the main source of truth is [`../str-vsl/overall.html`](../str-vsl/overall.html). Do not default to the generic template when the request is about this repo's existing slide deck.
+In this repository, the main source of truth is [`str-vsl/overall.html`](str-vsl/overall.html). Do not default to the generic template when the request is about this repo's existing slide deck.
 
 ## Quick Start
 
-1. Open `../str-vsl/overall.html` first.
+1. Open `str-vsl/overall.html` first.
 2. Reuse or duplicate slide sections from that file instead of starting from a blank template.
 3. Preserve the existing CSS system, slide class names, presenter mode, and `images/` relative paths unless the user asks for a structural rewrite.
 4. Keep new slide work visually consistent with the existing deck.
@@ -19,15 +19,15 @@ In this repository, the main source of truth is [`../str-vsl/overall.html`](../s
 
 ## Canonical Files
 
-- `../str-vsl/overall.html` - primary working deck with the current slide system, CSS, presenter view, notes, and interaction logic
-- `../str-vsl/images/` - image assets used by `overall.html`
+- `str-vsl/overall.html` - primary working deck with the current slide system, CSS, presenter view, notes, and interaction logic
+- `str-vsl/images/` - image assets used by `overall.html`
 - `assets/template.html` - older generic slide reference; optional only when the user wants a fresh deck outside the STR/VSL deck structure
 
 ## Required Workflow
 
 When working on this repo:
 
-1. Read `../str-vsl/overall.html` before making slide changes.
+1. Read `str-vsl/overall.html` before making slide changes.
 2. Edit that file directly when the task is about the live STR/VSL deck.
 3. Prefer modifying existing slide patterns over inventing brand-new structures.
 4. Keep image URLs relative to `images/...` so the deck still renders inside `str-vsl/`.
@@ -39,7 +39,7 @@ When working on this repo:
 
 Before creating a new design:
 
-1. Match the request to the closest existing slide class in `../str-vsl/overall.html`.
+1. Match the request to the closest existing slide class in `str-vsl/overall.html`.
 2. Duplicate and adapt that block first.
 3. Reuse inner component classes from the deck whenever possible.
 4. Create a brand-new slide class only if no existing pattern fits the content.
@@ -53,13 +53,13 @@ If several classes could work, prefer the one that preserves the strongest conti
 - The existing hover, shadow, rounded-card, and badge treatments
 - The presenter mode, teleprompter flow, and `BroadcastChannel` sync
 - `defaultSlideNotes`, slide titles, and progression through the deck
-- Relative image usage under `../str-vsl/images/`
+- Relative image usage under `str-vsl/images/`
 
 ## Visual System
 
 ### Color Palette
 
-Use the deck's established palette from `../str-vsl/overall.html`:
+Use the deck's established palette from `str-vsl/overall.html`:
 
 - Dark green: `#0f4c3a`
 - Mid green: `#0a3d2f`
@@ -85,7 +85,7 @@ Use the deck's established palette from `../str-vsl/overall.html`:
 
 ## Full Pattern Catalog
 
-`../str-vsl/overall.html` contains a broad pattern library. Use these classes intentionally.
+`str-vsl/overall.html` contains a broad pattern library. Use these classes intentionally.
 
 ### Inclusion And Recap Slides
 
@@ -292,7 +292,7 @@ The skill should behave like a slide designer, not a text formatter.
 
 ### If the user wants to update the existing VSL deck
 
-- Work in `../str-vsl/overall.html`.
+- Work in `str-vsl/overall.html`.
 - Preserve the current slide order unless the request includes re-sequencing.
 - Match nearby slide structure, spacing, and headline tone.
 - Keep presenter notes aligned with the visible slide content.
@@ -300,7 +300,7 @@ The skill should behave like a slide designer, not a text formatter.
 
 ### If the user wants a new slide in the same style
 
-- Duplicate the closest existing slide block in `../str-vsl/overall.html`.
+- Duplicate the closest existing slide block in `str-vsl/overall.html`.
 - Rename classes only when a new visual pattern is genuinely needed.
 - Add matching notes if the slide should participate in presenter mode.
 - When possible, borrow inner components from multiple existing slides instead of building new primitives.
@@ -309,7 +309,7 @@ The skill should behave like a slide designer, not a text formatter.
 
 - You may use `assets/template.html` as a helper reference.
 - Still carry over the same brand palette and typography.
-- Make it clear when you are not working from `overall.html`.
+- Make it clear when you are not working from `str-vsl/overall.html`.
 
 ## Guardrails
 
@@ -322,4 +322,11 @@ The skill should behave like a slide designer, not a text formatter.
 
 ## Output Expectation
 
-For repo-specific slide work, the deliverable should normally be an update to `../str-vsl/overall.html` and any supporting assets under `../str-vsl/images/`.
+For repo-specific slide work, the deliverable should normally be an update to `str-vsl/overall.html` and any supporting assets under `str-vsl/images/`.
+
+## Examples
+
+- "Turn this VSL segment into 3 slides using the existing deck patterns."
+- "Use the existing ROI structure to visualize these numbers."
+- "Choose the best existing slide design for this topic and build the slide."
+- "Adapt this script beat into a Path C style slide without inventing a new layout."

@@ -1,13 +1,62 @@
-# LIS SLIDE DESIGN and VSL Archive
+# LIS SLIDE DESIGN
 
-This repo bundles the requested files into one shareable GitHub repository.
+Single-skill GitHub repo for designing Legacy Investing Show HTML slides from raw topics, scripts, outlines, or offer copy.
 
-## Included Content
+The installable skill is the root [`SKILL.md`](SKILL.md). The bundled reference deck is [`str-vsl/overall.html`](str-vsl/overall.html).
 
-- `lis-slide-design/` copied from `Archive/Preston Content Archive/style-guide-slides-jan28/preston-slides`, then renamed and expanded into the LIS SLIDE DESIGN skill
-- `str-vsl/overall.html` copied from `PreCall VSL/STR/experimental/str vsl/overall.html`
-- `str-vsl/images/` added so `overall.html` can render its image assets
+## Install
+
+Install directly from the GitHub repo:
+
+```bash
+npx skills add LEGACY-INVESTING-SHOW/preston-slides-and-vsl
+```
+
+You can also install from the full GitHub URL:
+
+```bash
+npx skills add https://github.com/LEGACY-INVESTING-SHOW/preston-slides-and-vsl
+```
+
+If your agent does not pick up the new skill immediately, restart it.
+
+## What This Skill Does
+
+- Turns raw content into slide-ready visual structures instead of dumping text onto slides
+- Chooses the best existing layout from the bundled reference deck
+- Reuses the patterns, classes, and visual system from `str-vsl/overall.html`
+- Preserves presenter notes, deck flow, and bundled image assets when editing the reference deck
+
+## Best Use Cases
+
+- Convert a VSL script into slides
+- Turn a topic or outline into a visual deck
+- Rebuild or extend the existing Legacy Investing Show slide deck
+- Choose the best layout for numbers, comparisons, frameworks, offers, or support slides
+
+## Example Prompts
+
+- `Turn this VSL section into 3 slides using the existing LIS deck patterns.`
+- `Take this topic and choose the best slide design from the repo before writing the slide.`
+- `Use the current ROI layout to visualize these numbers.`
+- `Make a Path C support slide from this speaker script without inventing a new design system.`
+
+## Repo Layout
+
+- [`SKILL.md`](SKILL.md): installable skill definition
+- [`assets/template.html`](assets/template.html): secondary generic template reference
+- [`str-vsl/overall.html`](str-vsl/overall.html): canonical reference deck and pattern library
+- [`str-vsl/images/`](str-vsl/images): image assets used by the reference deck
+- [`str-vsl/home-office-deduction-slide.html`](str-vsl/home-office-deduction-slide.html): companion slide file in the same visual family
+
+## How Installation Works
+
+The `skills` CLI looks for skills in a repository. For a single-skill repo, the cleanest path is a root `SKILL.md`, which is how this repo is structured.
+
+That means the repo URL is enough. A user does not need to point at a nested subdirectory or guess the skill path.
 
 ## Notes
 
-- The original HTML referenced `images/uplisting.webp`, but the available asset was `uplisting.png`, so the HTML was updated to match the bundled file.
+- This repo is intentionally packaged as a single-skill repository.
+- `str-vsl/overall.html` is the main reference artifact the skill uses to choose layouts.
+- `assets/template.html` is kept only as a secondary helper for generic deck starts.
