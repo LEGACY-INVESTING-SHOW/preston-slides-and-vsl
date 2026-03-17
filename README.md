@@ -27,6 +27,13 @@ If your agent does not pick up the new skill immediately, restart it.
 - Reuses the patterns, classes, and visual system from `str-vsl/overall.html`
 - Preserves presenter notes, deck flow, and bundled image assets when editing the reference deck
 
+## Why This Skill Is Better
+
+- It chooses a design direction before choosing a layout
+- It includes slide-specific anti-patterns so the output does not drift into generic AI deck design
+- It pushes for stronger hierarchy, rhythm, and visual intent instead of repetitive card grids
+- It treats the reference deck as a real pattern library, not just a template dump
+
 ## Best Use Cases
 
 - Convert a VSL script into slides
@@ -60,3 +67,4 @@ That means the repo URL is enough. A user does not need to point at a nested sub
 - This repo is intentionally packaged as a single-skill repository.
 - `str-vsl/overall.html` is the main reference artifact the skill uses to choose layouts.
 - `assets/template.html` is kept only as a secondary helper for generic deck starts.
+- The install identifier remains `lis-slide-design` for compatibility with the skills ecosystem, while the human-facing skill title is `LIS SLIDE DESIGN`.

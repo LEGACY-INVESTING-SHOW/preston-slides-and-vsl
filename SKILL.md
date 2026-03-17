@@ -1,6 +1,6 @@
 ---
 name: lis-slide-design
-description: LIS SLIDE DESIGN creates HTML presentation slides for Legacy Investing Show in Preston Seo's brand style. Use when creating slide decks, presentations, pitch decks, or HTML-based slides for Legacy Investing, Preston Seo, tax optimization content, or wealth-building presentations. In this repo, use `str-vsl/overall.html` as the primary reference and working deck.
+description: LIS SLIDE DESIGN creates HTML presentation slides for Legacy Investing Show in Preston Seo's brand style. Use when creating slide decks, presentations, pitch decks, or HTML-based slides for Legacy Investing, Preston Seo, tax optimization content, or wealth-building presentations. It turns raw content into slides by choosing the strongest visual structure from the packaged deck instead of defaulting to generic layouts.
 ---
 
 # LIS SLIDE DESIGN
@@ -82,6 +82,97 @@ Use the deck's established palette from `str-vsl/overall.html`:
 - Keep hierarchy obvious with badges, brows, numbers, cards, and section headers.
 - Reuse the deck's existing shadows, borders, and rounded cards for consistency.
 - Use contextual screenshots and product visuals when the slide format expects them.
+
+## Design Direction
+
+Before choosing a slide pattern, decide the design direction for that section of the deck:
+
+- Purpose: what job does this slide need to do in the narrative
+- Audience: first-time prospect, qualified lead, client, or internal team
+- Tone: analytical, luxurious, operator-focused, educational, high-conviction, or concierge-style
+- Evidence mode: numbers, proof, process, support, comparison, or transformation
+- Memorability: what is the one visual or framing choice the viewer should remember
+
+Use the deck's brand constraints, but do not make every slide feel identical. Variation should feel intentional, not random.
+
+Within the LIS system, choose a clear sub-flavor for the section when useful:
+
+- editorial wealth memo
+- private-client concierge
+- operator playbook
+- analytical ROI proof
+- transformation snapshot
+- premium offer reveal
+
+CRITICAL: intentionality matters more than intensity. A quiet, refined slide can be just as strong as an aggressive proof slide if the design direction is clear.
+
+## Slide Design Fluency
+
+### Typography
+
+- Use hierarchy aggressively: eyebrow, headline, support copy, labels, and proof should feel distinct.
+- Compress long ideas into punchy lines, not presenter-paragraphs on the slide.
+- Let the headline carry the narrative burden whenever possible.
+- Avoid generic "icon above heading plus short paragraph" composition unless the existing slide pattern truly calls for it.
+
+### Color
+
+- Commit to dominant surfaces with decisive accents rather than distributing all colors evenly.
+- Use gold as emphasis, not wallpaper.
+- On colored surfaces, use text colors tuned to the surface instead of washed-out generic gray.
+- Avoid generic AI palettes such as purple-blue gradients, cyan-on-dark, or decorative neon accents that do not belong to the LIS brand.
+
+### Layout And Rhythm
+
+- Create rhythm by varying density across the deck: some slides should breathe, some should stack proof tightly.
+- Prefer asymmetric, directional layouts when they improve scanability or drama.
+- Left-aligned text usually feels more deliberate than centering every element.
+- Break uniformity on purpose. Repeating the exact same card grid too many times makes the deck feel templated.
+
+### Visual Details
+
+- Decorative elements should reinforce the argument, not just fill empty space.
+- Screenshots, dashboards, tables, and mockups should be chosen because they prove something.
+- Use borders, highlights, tags, and contrast to clarify meaning, not to add decoration for its own sake.
+
+### Motion And Reveal
+
+- If adding animation or reveal logic, use it to clarify sequence or emphasis.
+- Favor a few meaningful reveal moments over constant motion everywhere.
+- Avoid flashy transitions that compete with the message.
+
+### Slide Writing
+
+- Every word must earn its place.
+- Do not restate the headline in the body.
+- One slide should usually have one dominant job.
+- If a thought needs too much copy, split it into more than one slide.
+
+## Slide Anti-Patterns
+
+Avoid these common failure modes:
+
+- card soup: too many same-sized cards with equal emphasis
+- centered-everything layouts that remove narrative direction
+- giant generic icons used as decorative filler
+- gradient text on metrics or headings
+- purple/cyan "AI" palettes that break the brand
+- repeating the same slide pattern so often the deck loses momentum
+- stuffing presenter notes onto the visible slide
+- adding charts, badges, or screenshots that do not advance the argument
+- making every button, stat, or callout feel equally important
+- trying to squeeze an entire script beat into one overloaded slide
+
+## Slide Slop Test
+
+Run this quality check before finalizing a slide:
+
+- If this slide could belong to any generic webinar deck, it is not specific enough.
+- If every block has the same visual weight, hierarchy is failing.
+- If the slide looks like "safe AI output" from first glance, it needs stronger choices.
+- If removing one component improves clarity, that component should probably go.
+
+The goal is not novelty for its own sake. The goal is a slide that feels intentionally designed for this exact message.
 
 ## Full Pattern Catalog
 
@@ -276,6 +367,8 @@ Use these heuristics when deciding the best display structure:
 - If the content compares options, use one of the comparison layouts.
 - If the content is about software, tools, or assets, use image-backed feature grids.
 - If the content is emotional or punchy, prefer bold single-message slides over overloaded grids.
+- If two patterns are plausible, choose the one with the stronger hierarchy and less repeated structure.
+- If the slide starts feeling generic, sharpen the design direction before adding more UI elements.
 
 ## Default Behavior
 
@@ -287,6 +380,13 @@ If the user gives raw content and does not specify a layout:
 4. produce the slide in the style of the existing deck
 
 The skill should behave like a slide designer, not a text formatter.
+
+## Implementation Principles
+
+- Match implementation complexity to the visual goal. Proof-heavy slides need strong information design; elegant slides need restraint and precision.
+- Make creative choices that still feel native to the LIS deck system.
+- Do not reach for novelty that breaks trust, legibility, or the premium tone.
+- Vary rhythm across a deck, but keep the brand voice coherent.
 
 ## Editing Guidance
 
